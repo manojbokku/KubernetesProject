@@ -1,0 +1,781 @@
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker images
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+manojbokku/udacity-frontend          local               e703298d6d02        19 minutes ago      38.5MB
+<none>                               <none>              74f8ed6c84ab        19 minutes ago      8.8GB
+manojbokku/udacity-restapi-feed      latest              6c6e37d0f964        33 minutes ago      1.17GB
+manojbokku/udacity-restapi-user      latest              ae818a8d417f        33 minutes ago      1.17GB
+manojbokku/reverseproxy              latest              b8bd12c6d65c        44 minutes ago      19.9MB
+node                                 12                  de04dbcdb20a        11 hours ago        916MB
+nginx                                alpine              29b49a39bc47        4 days ago          19.9MB
+beevelop/ionic                       latest              ec034e2d5665        3 weeks ago         7.92GB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        7 weeks ago         33.1MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        6 months ago        207MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        6 months ago        82.4MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        6 months ago        159MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        6 months ago        81.1MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        10 months ago       35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        10 months ago       49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        15 months ago       40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        16 months ago       258MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago         742kB
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker system prune
+WARNING! This will remove:
+  - all stopped containers
+  - all networks not used by at least one container
+  - all dangling images
+  - all dangling build cache
+
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+c3fa43916e97da2d241ea9f1f57b3b3151cffa1bed51d937c9a8f5df9bedc66e
+b14e7b9156cd8654170ebfa1edbba50c06fc7a4ba9be32a15431ce7d41573515
+
+Deleted Images:
+deleted: sha256:74f8ed6c84abfe4a3923673d3dc02942ee2cc8a8fa242b3a0311f4d5a3528cc8
+deleted: sha256:46150d64f9164966e104c1def70b0323b4fa7fea22077f65207bfa1c88945297
+deleted: sha256:b25f045869626182693d66d8a7bc09a68b045c9c7878a0e527c218117f986f41
+deleted: sha256:095504d1f888a69f2fb3e016e1ead6f64ab5617f30be24314154b184b388d393
+deleted: sha256:c0733b9aec7a810bf950d8b69d5f497f79dde37e666b2b2b2df34300073387db
+deleted: sha256:8e2231f6ca71ba0ed7847f169ece9ddbe5173afe23aa6177a982cc592afd7baa
+deleted: sha256:e414a72854e028e7e8426842354ee41f028372534a4b23e82682d7bdee075a3d
+deleted: sha256:73a91549fbc621e7529288e4cfac2f8a3a59854fb03759e1d98ee8ece0d97ab0
+deleted: sha256:66a25050d16dcc8074ac80b64335330cbb6764044d677d4cb2e794c8d3ca3ed8
+deleted: sha256:98826cd63e0f45b26a6194aa85796c273dfd57d2a11e31e003474abb7825b105
+
+Total reclaimed space: 879.5MB
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker images
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+manojbokku/udacity-frontend          local               e703298d6d02        20 minutes ago      38.5MB
+manojbokku/udacity-restapi-feed      latest              6c6e37d0f964        34 minutes ago      1.17GB
+manojbokku/udacity-restapi-user      latest              ae818a8d417f        34 minutes ago      1.17GB
+manojbokku/reverseproxy              latest              b8bd12c6d65c        45 minutes ago      19.9MB
+node                                 12                  de04dbcdb20a        11 hours ago        916MB
+nginx                                alpine              29b49a39bc47        4 days ago          19.9MB
+beevelop/ionic                       latest              ec034e2d5665        3 weeks ago         7.92GB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        7 weeks ago         33.1MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        6 months ago        82.4MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        6 months ago        207MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        6 months ago        159MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        6 months ago        81.1MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        10 months ago       35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        10 months ago       49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        15 months ago       40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        16 months ago       258MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago         742kB
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker-compose up
+Creating network "docker_default" with the default driver
+Creating docker_backend-user_1 ...
+Creating docker_frontend_1     ...
+Creating docker_backend-user_1 ... done                                                                                                                                                         Creating docker_frontend_1     ... done                                                                                                                                                         ERROR: for docker_backend-feed_1  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+
+ERROR: for backend-feed  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+ERROR: Encountered errors while bringing up the project.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> echo $Env:POSTGRESS_USERNAME
+manojrdb
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker-compose up
+docker_frontend_1 is up-to-date
+docker_backend-user_1 is up-to-date
+Creating docker_backend-feed_1 ... error                                                                                                                                                        
+ERROR: for docker_backend-feed_1  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+
+ERROR: for backend-feed  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+ERROR: Encountered errors while bringing up the project.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker-compose up
+WARNING: The Env variable is not set. Defaulting to a blank string.
+Recreating docker_backend-user_1 ...
+docker_frontend_1 is up-to-date
+Creating docker_backend-feed_1   ... error                                                                                                                                                      Recreating docker_backend-user_1 ... done                                                                                                                                                       ERROR: for docker_backend-feed_1  Cannot create container for service backend-feed: invalid mode: /root/.aws
+
+ERROR: for backend-feed  Cannot create container for service backend-feed: invalid mode: /root/.aws
+ERROR: Encountered errors while bringing up the project.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker-compose up
+WARNING: The Env variable is not set. Defaulting to a blank string.
+docker_backend-user_1 is up-to-date
+docker_frontend_1 is up-to-date
+Creating docker_backend-feed_1 ... error                                                                                                                                                        
+ERROR: for docker_backend-feed_1  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+
+ERROR: for backend-feed  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+ERROR: Encountered errors while bringing up the project.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker-compose up
+WARNING: The Env variable is not set. Defaulting to a blank string.
+docker_backend-user_1 is up-to-date
+docker_frontend_1 is up-to-date
+Creating docker_backend-feed_1 ... error                                                                                                                                                        
+ERROR: for docker_backend-feed_1  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+
+ERROR: for backend-feed  Cannot create container for service backend-feed: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}
+ERROR: Encountered errors while bringing up the project.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project> cd .\udacity-c3-restapi-feed\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                mock
+d-----        4/21/2020   9:04 PM                node_modules
+d-----        4/21/2020   8:43 PM                src
+-a----        4/21/2020   8:43 PM            623 .gitignore
+-a----        4/21/2020   8:43 PM             16 .npmrc
+-a----        4/21/2020   8:43 PM            308 Dockerfile
+-a----        4/21/2020   8:43 PM         126745 package-lock.json
+-a----        4/21/2020   8:43 PM           1399 package.json
+-a----        4/21/2020   8:43 PM           5583 tsconfig.json
+-a----        4/21/2020   8:43 PM           3329 tslint.json
+-a----        4/21/2020   8:43 PM          15447 udacity-c2-restapi.postman_collection.json
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                mock
+d-----        4/21/2020   9:04 PM                node_modules
+d-----        4/21/2020   8:43 PM                src
+-a----        4/21/2020   8:43 PM            623 .gitignore
+-a----        4/21/2020   8:43 PM             16 .npmrc
+-a----        4/21/2020   8:43 PM            308 Dockerfile
+-a----        4/21/2020   8:43 PM         126745 package-lock.json
+-a----        4/21/2020   8:43 PM           1399 package.json
+-a----        4/21/2020   8:43 PM           5583 tsconfig.json
+-a----        4/21/2020   8:43 PM           3329 tslint.json
+-a----        4/21/2020   8:43 PM          15447 udacity-c2-restapi.postman_collection.json
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed> docker run --rm --publish 8080:8080 -v $Env:HOME/.aws:/root/.aws --env POSTGRESS_HOST=$Env:POSTGRESS_HOST --env POSTGRESS_USERNAME=$Env:POSTGRESS_USERNAME --env POSTGRESS_PASSWORD=$Env:POSTGRESS_PASSWORD --env POSTGRESS_DB=$Env:POSTGRESS_DB --env AWS_REGION=$Env:AWS_REGION --env AWS_PROFILE=$Env:AWS_PROFILE --env AWS_BUCKET=$Env:AWS_BUCKET --env JWT_SECRET=$Env:JAWT_SECRET --name feed manoj/udacity-restapi-feed
+C:\Program Files\Docker\Docker\resources\bin\docker.exe: Error response from daemon: status code not OK but 500: {"Message":"Unhandled exception: Drive has not been shared"}.
+See 'C:\Program Files\Docker\Docker\resources\bin\docker.exe run --help'.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed> docker
+
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Options:
+      --config string      Location of client config files (default
+                           "C:\\Users\\manoj\\.docker")
+  -c, --context string     Name of the context to use to connect to the
+                           daemon (overrides DOCKER_HOST env var and
+                           default context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket(s) to connect to
+  -l, --log-level string   Set the logging level
+                           ("debug"|"info"|"warn"|"error"|"fatal")
+                           (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default
+                           "C:\\Users\\manoj\\.docker\\ca.pem")
+      --tlscert string     Path to TLS certificate file (default
+                           "C:\\Users\\manoj\\.docker\\cert.pem")
+      --tlskey string      Path to TLS key file (default
+                           "C:\\Users\\manoj\\.docker\\key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Management Commands:
+  builder     Manage builds
+  config      Manage Docker configs
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  network     Manage networks
+  node        Manage Swarm nodes
+  plugin      Manage plugins
+  secret      Manage Docker secrets
+  service     Manage services
+  stack       Manage Docker stacks
+  swarm       Manage Swarm
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  build       Build an image from a Dockerfile
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  exec        Run a command in a running container
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  images      List images
+  import      Import the contents from a tarball to create a filesystem image
+  info        Display system-wide information
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  login       Log in to a Docker registry
+  logout      Log out from a Docker registry
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  ps          List containers
+  pull        Pull an image or a repository from a registry
+  push        Push an image or a repository to a registry
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  run         Run a command in a new container
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  search      Search the Docker Hub for images
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  version     Show the Docker version information
+  wait        Block until one or more containers stop, then print their exit codes
+
+Run 'docker COMMAND --help' for more information on a command.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-restapi-feed> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                Project
+-a----        4/21/2020   8:43 PM            762 .travis.yaml
+-a----        4/21/2020   8:43 PM             81 README.txt
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject> cd .\Project\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                Deployment-Screenshots
+d-----        4/21/2020   8:43 PM                udacity-c3-deployment
+d-----        4/21/2020   8:52 PM                udacity-c3-frontend
+d-----        4/21/2020   9:04 PM                udacity-c3-restapi-feed
+d-----        4/21/2020   9:05 PM                udacity-c3-restapi-user
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project> cd .\udacity-c3-deployment\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                docker
+d-----        4/21/2020   8:43 PM                k8s
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd .\docker\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        4/21/2020   9:45 PM            464 docker-compose-build.yaml
+-a----        4/21/2020  11:07 PM           1239 docker-compose.yaml
+-a----        4/21/2020   8:43 PM             59 Dockerfile
+-a----        4/21/2020   8:43 PM       57386128 kubectl
+-a----        4/21/2020   8:43 PM            710 nginx.conf
+-a----        4/21/2020   8:43 PM            656 README.md
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker-compose up
+WARNING: The Env variable is not set. Defaulting to a blank string.
+Starting docker_backend-user_1 ... done                                                                                                                                                         Starting docker_frontend_1     ... done                                                                                                                                                         Creating docker_backend-feed_1 ... done                                                                                                                                                         Creating docker_reverseproxy_1 ... done                                                                                                                                                         Attaching to docker_backend-user_1, docker_frontend_1, docker_backend-feed_1, docker_reverseproxy_1
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: using the "epoll" event method
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: nginx/1.17.10
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: built by gcc 9.2.0 (Alpine 9.2.0)
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: OS: Linux 4.19.76-linuxkit
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: getrlimit(RLIMIT_NOFILE): 1048576:1048576
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: start worker processes
+reverseproxy_1  | 2020/04/21 23:04:03 [notice] 1#1: start worker process 6
+backend-user_1  |
+backend-user_1  | > udacity-c2-restapi@1.0.0 dev /usr/src/app
+backend-user_1  | > ts-node-dev --respawn --transpileOnly ./src/server.ts
+backend-user_1  |
+backend-feed_1  |
+backend-feed_1  | > udacity-c2-restapi@1.0.0 dev /usr/src/app
+backend-feed_1  | > ts-node-dev --respawn --transpileOnly ./src/server.ts
+backend-feed_1  |
+backend-user_1  | Using ts-node version 8.0.3, typescript version 3.3.4000
+backend-feed_1  | Using ts-node version 8.0.3, typescript version 3.3.4000
+backend-user_1  | Error: /usr/src/app/node_modules/bcrypt/lib/binding/bcrypt_lib.node: invalid ELF header
+backend-user_1  |     at Module._extensions..node (internal/modules/cjs/loader.js:1206:18)
+backend-user_1  |     at Object.nodeDevHook [as .node] (/usr/src/app/node_modules/ts-node-dev/lib/hook.js:61:7)
+backend-user_1  |     at Module.load (internal/modules/cjs/loader.js:1000:32)
+backend-user_1  |     at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+backend-user_1  |     at Module.require (internal/modules/cjs/loader.js:1042:19)
+backend-user_1  |     at require (internal/modules/cjs/helpers.js:77:18)
+backend-user_1  |     at Object.<anonymous> (/usr/src/app/node_modules/bcrypt/bcrypt.js:6:16)
+backend-user_1  |     at Module._compile (internal/modules/cjs/loader.js:1156:30)
+backend-user_1  |     at Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+backend-user_1  |     at Object.nodeDevHook [as .js] (/usr/src/app/node_modules/ts-node-dev/lib/hook.js:61:7)
+backend-user_1  |     at Module.load (internal/modules/cjs/loader.js:1000:32)
+backend-user_1  |     at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+backend-user_1  |     at Module.require (internal/modules/cjs/loader.js:1042:19)
+backend-user_1  |     at require (internal/modules/cjs/helpers.js:77:18)
+backend-user_1  |     at Object.<anonymous> (/usr/src/app/src/controllers/v0/users/routes/auth.router.ts:21:29)
+backend-user_1  |     at Module._compile (internal/modules/cjs/loader.js:1156:30)
+backend-user_1  |     at Module.m._compile (/tmp/ts-node-dev-hook-734547132078422.js:55:25)
+backend-user_1  |     at Module._extensions..js (internal/modules/cjs/loader.js:1176:10)
+backend-user_1  |     at require.extensions.<computed> (/tmp/ts-node-dev-hook-734547132078422.js:57:14)
+backend-user_1  |     at Object.nodeDevHook [as .ts] (/usr/src/app/node_modules/ts-node-dev/lib/hook.js:61:7)
+backend-user_1  |     at Module.load (internal/modules/cjs/loader.js:1000:32)
+backend-user_1  |     at Function.Module._load (internal/modules/cjs/loader.js:899:14)
+backend-user_1  | [ERROR] 23:04:11 Error: /usr/src/app/node_modules/bcrypt/lib/binding/bcrypt_lib.node: invalid ELF header
+backend-feed_1  | (node:31) UnhandledPromiseRejectionWarning: SequelizeHostNotFoundError: getaddrinfo ENOTFOUND :POSTGRESS_HOST
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:173:24
+backend-feed_1  |     at Connection.connectingErrorHandler (/usr/src/app/node_modules/pg/lib/client.js:163:14)
+backend-feed_1  |     at Connection.emit (events.js:310:20)
+backend-feed_1  |     at Connection.EventEmitter.emit (domain.js:482:12)
+backend-feed_1  |     at Socket.reportStreamError (/usr/src/app/node_modules/pg/lib/connection.js:71:10)
+backend-feed_1  |     at Socket.emit (events.js:310:20)
+backend-feed_1  |     at Socket.EventEmitter.emit (domain.js:482:12)
+backend-feed_1  |     at emitErrorNT (internal/streams/destroy.js:92:8)
+backend-feed_1  |     at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+backend-feed_1  |     at processTicksAndRejections (internal/process/task_queues.js:84:21)
+backend-feed_1  | From previous event:
+backend-feed_1  |     at ConnectionManager.connect (/usr/src/app/node_modules/sequelize/lib/dialects/postgres/connection-manager.js:121:12)
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:309:50
+backend-feed_1  | From previous event:
+backend-feed_1  |     at ConnectionManager._connect (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:309:8)
+backend-feed_1  |     at ConnectionManager.getConnection (/usr/src/app/node_modules/sequelize/lib/dialects/abstract/connection-manager.js:247:46)
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/sequelize.js:570:36
+backend-feed_1  | From previous event:
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/sequelize.js:551:66
+backend-feed_1  |     at /usr/src/app/node_modules/retry-as-promised/index.js:70:21
+backend-feed_1  |     at new Promise (<anonymous>)
+backend-feed_1  |     at retryAsPromised (/usr/src/app/node_modules/retry-as-promised/index.js:60:10)
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/sequelize.js:551:30
+backend-feed_1  | From previous event:
+backend-feed_1  |     at Sequelize.query (/usr/src/app/node_modules/sequelize/lib/sequelize.js:508:23)
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/query-interface.js:236:46
+backend-feed_1  | From previous event:
+backend-feed_1  |     at QueryInterface.createTable (/usr/src/app/node_modules/sequelize/lib/query-interface.js:236:20)
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/model.js:1282:39
+backend-feed_1  | From previous event:
+backend-feed_1  |     at Function.sync (/usr/src/app/node_modules/sequelize/lib/model.js:1282:8)
+backend-feed_1  |     at Function._target.<computed> [as sync] (/usr/src/app/node_modules/sequelize-typescript/lib/models/BaseModel.js:36:41)
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/sequelize.js:750:50
+backend-feed_1  | From previous event:
+backend-feed_1  |     at /usr/src/app/node_modules/sequelize/lib/sequelize.js:750:22
+backend-feed_1  |     at processImmediate (internal/timers.js:456:21)
+backend-feed_1  |     at process.topLevelDomainCallback (domain.js:137:15)
+backend-feed_1  | From previous event:
+backend-feed_1  |     at Sequelize.sync (/usr/src/app/node_modules/sequelize/lib/sequelize.js:734:8)
+backend-feed_1  |     at Object.<anonymous> (/usr/src/app/src/server.ts:23:33)
+backend-feed_1  |     at Generator.next (<anonymous>)
+backend-feed_1  |     at fulfilled (/usr/src/app/src/server.ts:4:58)
+backend-feed_1  |     at processTicksAndRejections (internal/process/task_queues.js:97:5)
+backend-feed_1  | (node:31) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+backend-feed_1  | (node:31) [DEP0018] DeprecationWarning: Unhandled promise rejections are deprecated. In the future, promise rejections that are not handled will terminate the Node.js process with a non-zero exit code.
+reverseproxy_1  | 2020/04/21 23:15:30 [error] 6#6: *2 open() "/etc/nginx/html/api/V0" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET /api/V0 HTTP/1.1", host: "localhost:8080"
+reverseproxy_1  | 172.18.0.1 - - [21/Apr/2020:23:15:30 +0000] "GET /api/V0 HTTP/1.1" 404 556 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+reverseproxy_1  | 2020/04/21 23:15:31 [error] 6#6: *2 open() "/etc/nginx/html/favicon.ico" failed (2: No such file or directory), client: 172.18.0.1, server: , request: "GET /favicon.ico HTTP/1.1", host: "localhost:8080", referrer: "http://localhost:8080/api/V0"
+reverseproxy_1  | 172.18.0.1 - - [21/Apr/2020:23:15:31 +0000] "GET /favicon.ico HTTP/1.1" 404 556 "http://localhost:8080/api/V0" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+reverseproxy_1  | 2020/04/21 23:15:35 [error] 6#6: *2 "/etc/nginx/html/index.html" is not found (2: No such file or directory), client: 172.18.0.1, server: , request: "GET / HTTP/1.1", host: "localhost:8080"
+reverseproxy_1  | 172.18.0.1 - - [21/Apr/2020:23:15:35 +0000] "GET / HTTP/1.1" 404 556 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+reverseproxy_1  | 2020/04/21 23:15:57 [info] 6#6: *1 client closed connection while waiting for request, client: 172.18.0.1, server: 0.0.0.0:8080
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:20 +0000] "GET / HTTP/1.1" 200 1057 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:20 +0000] "GET /runtime.js HTTP/1.1" 200 9003 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:20 +0000] "GET /polyfills.js HTTP/1.1" 200 242441 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:20 +0000] "GET /vendor.js HTTP/1.1" 200 4344772 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:20 +0000] "GET /main.js HTTP/1.1" 200 73668 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:20 +0000] "GET /styles.js HTTP/1.1" 200 88753 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /2.js HTTP/1.1" 200 17670 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /common.js HTTP/1.1" 200 20725 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /152.js HTTP/1.1" 200 28293 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /146.js HTTP/1.1" 200 4542 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /54.js HTTP/1.1" 200 43507 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /90.js HTTP/1.1" 200 51137 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /18.js HTTP/1.1" 200 33331 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /58.js HTTP/1.1" 200 34277 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /home-home-module.js HTTP/1.1" 200 32225 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /124.js HTTP/1.1" 200 14000 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /104.js HTTP/1.1" 200 6585 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /svg/md-home.svg HTTP/1.1" 200 136 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /svg/md-menu.svg HTTP/1.1" 200 166 "http://localhost:8100/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+reverseproxy_1  | 2020/04/21 23:16:22 [error] 6#6: *3 connect() failed (111: Connection refused) while connecting to upstream, client: 172.18.0.1, server: , request: "OPTIONS /api/v0/feed HTTP/1.1", upstream: "http://172.18.0.4:8080/api/v0/feed", host: "localhost:8080", referrer: "http://localhost:8100/home"
+reverseproxy_1  | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "OPTIONS /api/v0/feed HTTP/1.1" 502 560 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:22 +0000] "GET /4.js HTTP/1.1" 200 1434 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:32 +0000] "GET /assets/icon/favicon.png HTTP/1.1" 200 930 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:32 +0000] "GET /6.js HTTP/1.1" 200 3296 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:32 +0000] "GET /5.js HTTP/1.1" 200 1488 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:37 +0000] "GET /132.js HTTP/1.1" 200 11050 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:37 +0000] "GET /0.js HTTP/1.1" 200 16799 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:38 +0000] "GET /32.js HTTP/1.1" 200 26155 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+frontend_1      | 172.18.0.1 - - [21/Apr/2020:23:16:38 +0000] "GET /1.js HTTP/1.1" 200 13224 "http://localhost:8100/home" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.163 Safari/537.36" "-"
+Gracefully stopping... (press Ctrl+C again to force)
+Stopping docker_reverseproxy_1 ... done                                                                                                                                                         Stopping docker_backend-feed_1 ... done                                                                                                                                                         Stopping docker_backend-user_1 ... done                                                                                                                                                         Stopping docker_frontend_1     ... done                                                                                                                                                         PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd .\k8s\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                pod-example
+-a----        4/21/2020  11:27 PM            170 aws-secret.yaml
+-a----        4/21/2020   9:37 PM           2162 backend-feed-deployment.yaml
+-a----        4/21/2020   8:43 PM            205 backend-feed-service.yaml
+-a----        4/21/2020   9:37 PM           1500 backend-user-deployment.yaml
+-a----        4/21/2020   8:43 PM            205 backend-user-service.yaml
+-a----        4/21/2020  11:30 PM            309 env-configmap.yaml
+-a----        4/21/2020  11:29 PM            152 env-secret.yaml
+-a----        4/21/2020   9:37 PM            642 frontend-deployment.yaml
+-a----        4/21/2020   8:43 PM            220 frontend-service.yaml
+-a----        4/21/2020   9:37 PM            643 reverseproxy-deployment.yaml
+-a----        4/21/2020   8:43 PM            234 reverseproxy-service.yaml
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\backend-feed-deployment.yaml
+deployment.apps/backend-feed created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\backend-feed-service.yaml
+service/backend-feed created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\backend-user-deployment.yaml
+deployment.apps/backend-user created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\backend-user-service.yaml
+service/backend-user created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\frontend-deployment.yaml
+deployment.apps/frontend created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\frontend-service.yaml
+service/frontend created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\reverseproxy-deployment.yaml
+deployment.apps/reverseproxy created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f .\reverseproxy-service.yaml
+service/reverseproxy created
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd .\docker\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        4/21/2020   9:45 PM            464 docker-compose-build.yaml
+-a----        4/21/2020  11:07 PM           1239 docker-compose.yaml
+-a----        4/21/2020   8:43 PM             59 Dockerfile
+-a----        4/21/2020   8:43 PM       57386128 kubectl
+-a----        4/21/2020   8:43 PM            710 nginx.conf
+-a----        4/21/2020   8:43 PM            656 README.md
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker login
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.
+Username: manojbokku
+Password:
+Login Succeeded
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker images
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+manojbokku/udacity-frontend          local               e703298d6d02        2 hours ago         38.5MB
+manojbokku/udacity-restapi-user      latest              ae818a8d417f        2 hours ago         1.17GB
+manojbokku/udacity-restapi-feed      latest              6c6e37d0f964        2 hours ago         1.17GB
+manojbokku/reverseproxy              latest              b8bd12c6d65c        3 hours ago         19.9MB
+node                                 12                  de04dbcdb20a        13 hours ago        916MB
+nginx                                alpine              29b49a39bc47        4 days ago          19.9MB
+beevelop/ionic                       latest              ec034e2d5665        3 weeks ago         7.92GB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        7 weeks ago         33.1MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        6 months ago        159MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        6 months ago        82.4MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        6 months ago        207MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        6 months ago        81.1MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        10 months ago       35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        10 months ago       49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        15 months ago       40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        16 months ago       258MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago         742kB
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker push manojbokku/udacity-frontend
+The push refers to repository [docker.io/manojbokku/udacity-frontend]
+06ce0a20ec69: Pushed                                                                                                                                                                            debb5485a52f: Mounted from library/nginx                                                                                                                                                        beee9f30bc1f: Mounted from library/nginx                                                                                                                                                        local: digest: sha256:e9e128a2d2b33d13762881e71225400fdc9512f173ebc06e562f5b9f72b55b01 size: 950
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker push manojbokku/udacity-restapi-user
+The push refers to repository [docker.io/manojbokku/udacity-restapi-user]
+043f63c520f9: Pushed                                                                                                                                                                            8534d702ec00: Pushed                                                                                                                                                                            eb19ecad6592: Pushed                                                                                                                                                                            6aa941be6613: Pushed                                                                                                                                                                            168d7a64fd67: Mounted from library/node                                                                                                                                                         2248290ea0ac: Mounted from library/node                                                                                                                                                         509eb9dfb1cd: Mounted from library/node                                                                                                                                                         d7369641c400: Mounted from library/node                                                                                                                                                         b829f6ba4e1d: Mounted from library/node                                                                                                                                                         a9286fedbd63: Mounted from library/node                                                                                                                                                         d50e7be1e737: Mounted from library/node                                                                                                                                                         6b114a2dd6de: Mounted from library/node                                                                                                                                                         bb9315db9240: Mounted from library/node                                                                                                                                                         latest: digest: sha256:e60ea11ffe59cd369481a7b11fab1e9acabca62af7d5fd8745f3fc98cdaac3fa size: 3055
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker push manojbokku/udacity-restapi-feed
+The push refers to repository [docker.io/manojbokku/udacity-restapi-feed]
+a8494ea5ebf6: Pushed                                                                                                                                                                            01c0e54affc7: Pushed                                                                                                                                                                            eb19ecad6592: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      6aa941be6613: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      168d7a64fd67: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      2248290ea0ac: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      509eb9dfb1cd: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      d7369641c400: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      b829f6ba4e1d: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      a9286fedbd63: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      d50e7be1e737: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      6b114a2dd6de: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      bb9315db9240: Mounted from manojbokku/udacity-restapi-user                                                                                                                                      latest: digest: sha256:2c099e1e37c9d60a63d6786ca58c4013ff2176df053dc775198d6bd011d4b7d7 size: 3055
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker push manojbokku/reverseproxy
+The push refers to repository [docker.io/manojbokku/reverseproxy]
+3ec1b5ed3356: Pushed                                                                                                                                                                            debb5485a52f: Mounted from manojbokku/udacity-frontend                                                                                                                                          beee9f30bc1f: Mounted from manojbokku/udacity-frontend                                                                                                                                          latest: digest: sha256:f36e92ef2a69f87438b8bdae7bef2e1d761f4122b9e8a8ce5bfc8ba7764f7cf3 size: 946
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd .\k8s\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                pod-example
+-a----        4/21/2020  11:27 PM            170 aws-secret.yaml
+-a----        4/21/2020   9:37 PM           2162 backend-feed-deployment.yaml
+-a----        4/21/2020   8:43 PM            205 backend-feed-service.yaml
+-a----        4/21/2020   9:37 PM           1500 backend-user-deployment.yaml
+-a----        4/21/2020   8:43 PM            205 backend-user-service.yaml
+-a----        4/21/2020  11:30 PM            309 env-configmap.yaml
+-a----        4/21/2020  11:29 PM            152 env-secret.yaml
+-a----        4/21/2020   9:37 PM            642 frontend-deployment.yaml
+-a----        4/21/2020   8:43 PM            220 frontend-service.yaml
+-a----        4/21/2020   9:37 PM            643 reverseproxy-deployment.yaml
+-a----        4/21/2020   8:43 PM            234 reverseproxy-service.yaml
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f backend-feed-deployment.yaml
+deployment.apps/backend-feed configured
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f backend-feed-service.yaml
+service/backend-feed unchanged
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f backend-user-deployment.yaml
+deployment.apps/backend-user configured
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f backend-user-service.yaml
+service/backend-user unchanged
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f frontend-deployment.yaml
+deployment.apps/frontend configured
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f frontend-service.yaml
+service/frontend unchanged
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f reverseproxy-deployment.yaml
+deployment.apps/reverseproxy configured
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl apply -f reverseproxy-service.yaml
+service/reverseproxy unchanged
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl get pods
+NAME                            READY   STATUS             RESTARTS   AGE
+backend-feed-7fb47f69cd-pjq2w   0/1     ImagePullBackOff   0          16m
+backend-user-5bdc9988db-pvnk7   1/1     Running            0          16m
+frontend-6b7584497d-2wcq5       1/1     Running            0          15m
+frontend-6b7584497d-jvhwx       1/1     Running            0          15m
+reverseproxy-58969f6bb-sswz9    1/1     Running            0          15m
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl describe pods backend-feed-7fb47f69cd-pjq2w
+Name:           backend-feed-7fb47f69cd-pjq2w
+Namespace:      default
+Priority:       0
+Node:           minikube/172.17.200.12
+Start Time:     Wed, 22 Apr 2020 00:18:00 +0100
+Labels:         app=backend-feed
+                pod-template-hash=7fb47f69cd
+Annotations:    <none>
+Status:         Running
+IP:             172.18.0.4
+Controlled By:  ReplicaSet/backend-feed-7fb47f69cd
+Containers:
+  backend-feed:
+    Container ID:   docker://1d8602877a9fb4d48930451cfe335441d808f5e1f3888bf49c26dd8b1d9462e5
+    Image:          manojbokku/udacity-restapi-feed
+    Image ID:       docker-pullable://manojbokku/udacity-restapi-feed@sha256:2c099e1e37c9d60a63d6786ca58c4013ff2176df053dc775198d6bd011d4b7d7
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Wed, 22 Apr 2020 00:34:35 +0100
+    Restart Count:  0
+    Limits:
+    Requests:
+      cpu:     250m
+      memory:  64Mi
+    Environment:
+      URL:                 <set to the key 'URL' of config map 'env-config'>             Optional: false
+      AWS_BUCKET:          <set to the key 'AWS_BUCKET' of config map 'env-config'>      Optional: false
+      AWS_PROFILE:         <set to the key 'AWS_PROFILE' of config map 'env-config'>     Optional: false
+      AWS_REGION:          <set to the key 'AWS_REGION' of config map 'env-config'>      Optional: false
+      JWT_SECRET:          <set to the key 'JWT_SECRET' of config map 'env-config'>      Optional: false
+      POSTGRESS_DB:        <set to the key 'POSTGRESS_DB' of config map 'env-config'>    Optional: false
+      POSTGRESS_HOST:      <set to the key 'POSTGRESS_HOST' of config map 'env-config'>  Optional: false
+    Mounts:
+      /root/.aws/ from aws-secret (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-zvkch (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  aws-secret:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  aws-secret
+    Optional:    false
+  default-token-zvkch:
+    SecretName:  default-token-zvkch
+    Optional:    false
+QoS Class:       Burstable
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type     Reason     Age                   From               Message
+  ----     ------     ----                  ----               -------
+  Normal   Scheduled  17m                   default-scheduler  Successfully assigned default/backend-feed-7fb47f69cd-pjq2w to minikube
+  Normal   Pulling    16m (x4 over 17m)     kubelet, minikube  Pulling image "manojbokku/udacity-restapi-feed"
+  Warning  Failed     16m (x4 over 17m)     kubelet, minikube  Failed to pull image "manojbokku/udacity-restapi-feed": rpc error: code = Unknown desc = Error response from daemon: pull access denied for manojbokku/udacity-restapi-feed, repository does not exist or may require 'docker login': denied: requested access to the resource is denied
+  Warning  Failed     16m (x4 over 17m)     kubelet, minikube  Error: ErrImagePull
+  Normal   BackOff    15m (x6 over 17m)     kubelet, minikube  Back-off pulling image "manojbokku/udacity-restapi-feed"
+  Warning  Failed     2m33s (x63 over 17m)  kubelet, minikube  Error: ImagePullBackOff
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> docker login
+Authenticating with existing credentials...
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> cd ..
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> ls
+
+
+    Directory: C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                docker
+d-----        4/21/2020   8:43 PM                k8s
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd .\docker\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> ls
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        4/21/2020   9:45 PM            464 docker-compose-build.yaml
+-a----        4/21/2020  11:07 PM           1239 docker-compose.yaml
+-a----        4/21/2020   8:43 PM             59 Dockerfile
+-a----        4/21/2020   8:43 PM       57386128 kubectl
+-a----        4/21/2020   8:43 PM            710 nginx.conf
+-a----        4/21/2020   8:43 PM            656 README.md
+
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker images
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+manojbokku/udacity-frontend          local               e703298d6d02        2 hours ago         38.5MB
+manojbokku/udacity-restapi-user      latest              ae818a8d417f        2 hours ago         1.17GB
+manojbokku/udacity-restapi-feed      latest              6c6e37d0f964        2 hours ago         1.17GB
+manojbokku/reverseproxy              latest              b8bd12c6d65c        3 hours ago         19.9MB
+node                                 12                  de04dbcdb20a        13 hours ago        916MB
+nginx                                alpine              29b49a39bc47        4 days ago          19.9MB
+beevelop/ionic                       latest              ec034e2d5665        3 weeks ago         7.92GB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        6 months ago        207MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        6 months ago        82.4MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        6 months ago        159MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        6 months ago        81.1MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        10 months ago       35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        10 months ago       49.9MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        16 months ago       258MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago         742kB
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\docker> docker push manojbokku/udacity-restapi-feed
+The push refers to repository [docker.io/manojbokku/udacity-restapi-feed]
+a8494ea5ebf6: Layer already exists                                                                                                                                                              01c0e54affc7: Layer already exists                                                                                                                                                              6aa941be6613: Layer already exists                                                                                                                                                              168d7a64fd67: Layer already exists                                                                                                                                                              2248290ea0ac: Layer already exists                                                                                                                                                              509eb9dfb1cd: Layer already exists                                                                                                                                                              d7369641c400: Layer already exists                                                                                                                                                              b829f6ba4e1d: Layer already exists                                                                                                                                                              a9286fedbd63: Layer already exists                                                                                                                                                              d50e7be1e737: Layer already exists                                                                                                                                                              6b114a2dd6de: Layer already exists                                                                                                                                                              bb9315db9240: Layer already exists                                                                                                                                                              latest: digest: sha256:2c099e1e37c9d60a63d6786ca58c4013ff2176df053dc775198d6bd011d4b7d7 size: 3055
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment> cd .\k8s\
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> ls
+
+
+
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----        4/21/2020   8:43 PM                pod-example
+-a----        4/21/2020  11:27 PM            170 aws-secret.yaml
+-a----        4/21/2020   9:37 PM           2162 backend-feed-deployment.yaml
+-a----        4/21/2020   8:43 PM            205 backend-feed-service.yaml
+-a----        4/21/2020   9:37 PM           1500 backend-user-deployment.yaml
+-a----        4/21/2020   8:43 PM            205 backend-user-service.yaml
+-a----        4/21/2020  11:30 PM            309 env-configmap.yaml
+-a----        4/21/2020  11:29 PM            152 env-secret.yaml
+-a----        4/21/2020   9:37 PM            642 frontend-deployment.yaml
+-a----        4/21/2020   8:43 PM            220 frontend-service.yaml
+-a----        4/21/2020   9:37 PM            643 reverseproxy-deployment.yaml
+-a----        4/21/2020   8:43 PM            234 reverseproxy-service.yaml
+
+
+NAME                            READY   STATUS    RESTARTS   AGE
+backend-feed-7fb47f69cd-pjq2w   1/1     Running   0          19m
+backend-user-5bdc9988db-pvnk7   1/1     Running   0          19m
+frontend-6b7584497d-2wcq5       1/1     Running   0          19m
+frontend-6b7584497d-jvhwx       1/1     Running   0          19m
+reverseproxy-58969f6bb-sswz9    1/1     Running   0          18m
+NAME           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+backend-feed   ClusterIP   10.100.196.162   <none>        8080/TCP   19m
+backend-user   ClusterIP   10.104.43.20     <none>        8080/TCP   19m
+frontend       ClusterIP   10.106.164.225   <none>        8100/TCP   19m
+kubernetes     ClusterIP   10.96.0.1        <none>        443/TCP    3h32m
+reverseproxy   ClusterIP   10.99.131.227    <none>        8080/TCP   19m
+Error: unknown command "clusterinfo" for "kubectl"
+
+        cluster-info
+
+Run 'kubectl --help' for usage.
+unknown command "clusterinfo" for "kubectl"
+Did you mean this?
+        cluster-info
+
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl cluster-info
+Kubernetes master is running at https://172.17.200.12:8443
+KubeDNS is running at https://172.17.200.12:8443/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> docker images
+REPOSITORY                           TAG                 IMAGE ID            CREATED             SIZE
+manojbokku/udacity-frontend          local               e703298d6d02        2 hours ago         38.5MB
+manojbokku/udacity-restapi-feed      latest              6c6e37d0f964        3 hours ago         1.17GB
+manojbokku/udacity-restapi-user      latest              ae818a8d417f        3 hours ago         1.17GB
+manojbokku/reverseproxy              latest              b8bd12c6d65c        3 hours ago         19.9MB
+node                                 12                  de04dbcdb20a        13 hours ago        916MB
+nginx                                alpine              29b49a39bc47        4 days ago          19.9MB
+beevelop/ionic                       latest              ec034e2d5665        3 weeks ago         7.92GB
+docker/desktop-storage-provisioner   v1.0                605a0f683b7b        7 weeks ago         33.1MB
+k8s.gcr.io/kube-apiserver            v1.15.5             e534b1952a0d        6 months ago        207MB
+k8s.gcr.io/kube-controller-manager   v1.15.5             1399a72fa1a9        6 months ago        159MB
+k8s.gcr.io/kube-proxy                v1.15.5             cbd7f21fec99        6 months ago        82.4MB
+k8s.gcr.io/kube-scheduler            v1.15.5             fab2dded59dd        6 months ago        81.1MB
+docker/kube-compose-controller       v0.4.23             a8c3d87a58e7        10 months ago       35.3MB
+docker/kube-compose-api-server       v0.4.23             f3591b2cb223        10 months ago       49.9MB
+k8s.gcr.io/coredns                   1.3.1               eb516548c180        15 months ago       40.3MB
+k8s.gcr.io/etcd                      3.3.10              2c4adeb21b4f        16 months ago       258MB
+k8s.gcr.io/pause                     3.1                 da86e6ba6ca1        2 years ago         742kB
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl get pods
+NAME                            READY   STATUS    RESTARTS   AGE
+backend-feed-7fb47f69cd-pjq2w   1/1     Running   0          22m
+backend-user-5bdc9988db-pvnk7   1/1     Running   0          21m
+frontend-6b7584497d-2wcq5       1/1     Running   0          21m
+frontend-6b7584497d-jvhwx       1/1     Running   0          21m
+reverseproxy-58969f6bb-sswz9    1/1     Running   0          21m
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl get services
+NAME           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+backend-feed   ClusterIP   10.100.196.162   <none>        8080/TCP   22m
+backend-user   ClusterIP   10.104.43.20     <none>        8080/TCP   21m
+frontend       ClusterIP   10.106.164.225   <none>        8100/TCP   21m
+kubernetes     ClusterIP   10.96.0.1        <none>        443/TCP    3h34m
+reverseproxy   ClusterIP   10.99.131.227    <none>        8080/TCP   21m
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl get nodes
+NAME       STATUS   ROLES    AGE     VERSION
+minikube   Ready    master   3h34m   v1.18.0
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl port-forward service/reverseproxy 8080:8080
+Forwarding from 127.0.0.1:8080 -> 8080
+Forwarding from [::1]:8080 -> 8080
+Handling connection for 8080
+E0422 01:10:22.178199   17244 portforward.go:233] lost connection to pod
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> kubectl get deployment
+NAME           READY   UP-TO-DATE   AVAILABLE   AGE
+backend-feed   1/1     1            1           56m
+backend-user   1/1     1            1           56m
+frontend       2/2     2            2           55m
+reverseproxy   1/1     1            1           55m
+PS C:\Users\manoj\Desktop\CloudDeveloperNanoDegree\KubernetesProject\Project\udacity-c3-deployment\k8s> docker
